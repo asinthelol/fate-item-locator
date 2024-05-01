@@ -1,0 +1,125 @@
+@import "./globals.scss";
+
+#hero {
+  @include flex;
+  column-gap: 10rem;
+
+  width: 100%;
+  height: 45rem;
+
+  #hero-text-area {
+    @include flex(center, flex-start, column);
+    row-gap: 2rem;
+
+    width: 30%;
+    height: 50%;
+
+    #hero-text {
+      @include flex(center, flex-start, column);
+      row-gap: 0rem;
+
+      h1 {
+        font-size: 4rem;
+        line-height: 4rem;
+        font-weight: 500;
+      }
+
+      #colored {
+        background: $special-color;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      
+    }
+    .gray {
+        font-size: 1.5rem;
+        font-weight: 300;
+        text-wrap: pretty;
+        color: $light-text-color;
+      }
+  }
+
+  #hero-image {
+    @include flex;
+
+    width: 25rem;
+    height: 25rem;
+
+    transform: rotate(45deg);
+    overflow: hidden;
+    
+
+    #image-area {
+      position: relative;
+      width: 25rem;
+      height: 25rem;
+      overflow: hidden; // Hide the overflow
+    
+      &::before {
+        content: "";
+        position: absolute;
+
+
+        width: 36rem;
+        height: 36rem;
+        background: url("/hero/hero.webp") no-repeat center/cover;
+
+        @media screen and (max-width: 27rem) {
+          background: url("/hero/hero-mobile.webp") no-repeat center/cover;;
+        }
+
+        transform: rotate(-45deg) translate(0, -22%);
+      }
+    }
+  }
+}
+
+@media screen  and (max-width: $mobile-breakpoint) {
+  #hero {
+    @include flex(center, center, column);
+ 
+    height: 40rem;
+
+    #hero-text-area {
+      @include flex(center, center, column);
+      order: 2;
+
+      width: 75%;
+      height: 50%;
+
+      #hero-text {
+        @include flex(center, center, column);
+        width: 100%;
+        h1 {
+          font-size: 2rem;
+          line-height: 2rem;
+        }
+      }
+      
+      .gray {
+        font-size: 1.25rem;
+        text-align: center;
+      }
+    }
+
+    #hero-image {
+      
+      width: 12rem;
+      height: 12rem;
+
+      #image-area {
+        width: 8rem;
+        height: 8rem;
+
+        &::before {
+          width: 12rem;
+          height: 12rem;
+          transform: rotate(-45deg) translate(0, -25%);
+        }
+      }
+    }
+  }
+  
+}

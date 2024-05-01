@@ -1,0 +1,58 @@
+@import './globals';
+
+#navbar-holder {
+  @include flex(flex-start, center);
+  height: 5rem;
+
+  #navbar {
+    @include flex(space-between, center);
+
+    list-style: none;
+
+    width: 100%;
+
+    margin: 0 3rem;
+
+    #home-li {
+      border-radius: 3rem;
+
+      background-color: transparent;
+
+      a { #icon { width: 2rem; } }
+    }
+
+    .nav-links {
+      @include flex;
+      column-gap: 3rem;
+
+      width: fit-content;
+
+      cursor: pointer;
+
+      transition: background-color 0.25s;
+
+      a { font-size: 1.25rem; }
+
+      #upload { @include buttonTransition;}
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+  #navbar-holder {
+    #navbar {
+      margin: 0 1rem;
+
+      #home-li {
+        a { #icon { width: 2rem; } }
+      }
+
+      .nav-links {
+        column-gap: 2rem;
+
+        a { font-size: 1rem; }
+      }
+    }
+  }
+  
+}
