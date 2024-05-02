@@ -2,6 +2,8 @@
 import { Inter, Poppins } from "next/font/google";
 import "./globals.scss";
 import styles from "./scss/layout.module.scss";
+import Image from "next/image";
+import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
@@ -14,6 +16,21 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const [isOpen, setIsOpen] = useState(false); // To check if hamburger menu is open.
+
+  // Function to toggle hamburger menu.
+  function toggleMenu() {
+    const overlay = document.getElementById(styles.overlay);
+
+    setIsOpen(!isOpen);
+    if (isOpen && overlay) {
+      overlay.className = styles.closed; // Somehow i messed it up so it has to be the other way around LOL
+    } else if(overlay){
+      overlay.className = styles.open;
+    }
+  }
+
   return (
     <html lang="en">
       <head>
@@ -24,15 +41,23 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <nav id={styles["navbar-holder"]}>
+          <div className={`${styles.overlay} ${isOpen ? styles.open : styles.closed}`}></div>
           <ul className={poppins.className} id={styles.navbar}>
-            <li className={styles["nav-links"]} id={styles["home-li"]} >
-              <a href="#" aria-label="Home Button" data-testid="home-button"><img id={styles.icon} src="/icons/icon.webp" alt="Home button icon"/></a>
-            </li>
             <li className={styles["nav-links"]}>
+              <a href="#" aria-label="Home Button" data-testid="home-button">
+                <Image id={styles.icon} src="/icons/icon.webp" alt="Home button icon" width={50} height={50} />
+              </a>
+            </li>
+            <li className={`${styles["nav-links"]} ${isOpen ? styles.open : ""}`}>
               <a className="button" id={styles.upload} data-testid="upload-button" href='#'>Upload</a>
               <a className="special-button" data-testid="special-button-1" href='#'>Items</a>
             </li>
           </ul>
+          <div id={styles.hamburger} className={isOpen ? styles.open : ""} onClick={toggleMenu}>
+            <span className={styles["hamburger-line"]}></span>
+            <span className={styles["hamburger-line"]}></span>
+            <span className={styles["hamburger-line"]}></span>
+          </div>
         </nav>
         {children}
         </body>

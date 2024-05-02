@@ -1,8 +1,28 @@
 @import './globals';
 
+
 #navbar-holder {
   @include flex(flex-start, center);
+
   height: 5rem;
+
+  .overlay {
+    display: none;
+    position: absolute;
+
+    top: 0;
+
+    width: 100%;
+    height: 0vh;
+    background-color: $foreground-color;
+
+    transition: height 0.25s ease;
+
+    z-index: 1;
+  
+    &.open { height: 100vh; }
+    &.closed { height: 0vh; }
+  }
 
   #navbar {
     @include flex(space-between, center);
@@ -13,13 +33,7 @@
 
     margin: 0 3rem;
 
-    #home-li {
-      border-radius: 3rem;
-
-      background-color: transparent;
-
-      a { #icon { width: 2rem; } }
-    }
+    z-index: 2;
 
     .nav-links {
       @include flex;
@@ -30,28 +44,102 @@
       cursor: pointer;
 
       transition: background-color 0.25s;
+    }
 
-      a { font-size: 1.25rem; }
+    .nav-links:first-of-type {
+      border-radius: 3rem;
 
-      #upload { @include buttonTransition;}
+      background-color: transparent;
+
+      a { #icon { width: 2rem; } }
+    }
+  }
+
+  #hamburger {
+    display: none;
+    row-gap: 0.5rem;
+
+    height: 3rem;
+    width: 3rem;
+
+    margin-right: 1.5rem;
+
+    cursor: pointer;
+
+    z-index: 2;
+
+    .hamburger-line {
+
+      width: 100%;
+      height: 0.25rem;
+
+      border-radius: 0.25rem;
+      background-color: $text-color;
+      
+
+      transition: transform 0.25s;
+    }
+
+    &.open {
+      .hamburger-line:first-of-type { transform: translateX(0.5rem) }
+      .hamburger-line:nth-of-type(2){ transform: translateX(-.5rem) }
+      .hamburger-line:last-of-type { transform: translateX(0.5rem) }
     }
   }
 }
 
+// Styles for mobile viewport
 @media screen and (max-width: $mobile-breakpoint) {
   #navbar-holder {
     #navbar {
       margin: 0 1rem;
 
-      #home-li {
-        a { #icon { width: 2rem; } }
-      }
+      .nav-links { column-gap: 2rem; }
 
-      .nav-links {
-        column-gap: 2rem;
+      .nav-links:last-of-type {
+        user-select: none;
 
-        a { font-size: 1rem; }
+        @include flex(center, center, column);
+        row-gap: 3rem;
+        
+        opacity: 0;
+
+        a {
+          font-size: 1.25rem;
+
+          opacity: 0;
+
+          padding: 0;
+
+          background: transparent;
+          transition: opacity 0.5s ease-in;
+        }
+
+        &.open {
+          @include flex(center, center, column);
+          user-select: none;
+
+          opacity: 1;
+
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+
+          a {
+            user-select:auto;
+            opacity: 1;
+          }
+        }
       }
+    }
+
+    .overlay {
+      display: block;
+    }
+
+    #hamburger {
+      @include flex(center, center, column);
     }
   }
   

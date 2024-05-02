@@ -32,8 +32,7 @@ export default function Home() {
           <a className="special-button" data-testid="special-button-2" href="">Items</a>
         </div>
         <div id={styles["hero-image"]}>
-          <div id={styles["image-area"]}>
-          </div>
+          <div id={styles["image-area"]} />
         </div>
       </main>
     </>

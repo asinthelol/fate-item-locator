@@ -9,7 +9,7 @@ $special-color: linear-gradient(to right, rgba(89, 118, 186, 1), rgba(102, 84, 2
 $special-color-hover: linear-gradient(to right, rgba(111, 145, 224, 1), rgba(135, 115, 255, 0.25));
 
 $mobile-breakpoint: 27rem;
-$portrait-breakpoint: 52rem;
+$portrait-breakpoint: 64rem;
 $landscape-breakpoint: 80rem;
 
 // Mixins
@@ -21,7 +21,6 @@ $landscape-breakpoint: 80rem;
 }
 
 @mixin button() {
-  font-size: 1.25rem;
   color: $text-color;
   cursor: pointer;
 
@@ -30,9 +29,7 @@ $landscape-breakpoint: 80rem;
   border-radius: 2rem;
 
   background-color: transparent;
-}
 
-@mixin buttonTransition($color: $foreground-color) {
   transition: background-color 0.25s;
 
   &:hover {
