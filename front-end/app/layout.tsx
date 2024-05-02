@@ -44,13 +44,13 @@ export default function RootLayout({
           <div className={`${styles.overlay} ${isOpen ? styles.open : styles.closed}`}></div>
           <ul className={poppins.className} id={styles.navbar}>
             <li className={styles["nav-links"]}>
-              <a href="#" aria-label="Home Button" data-testid="home-button">
+              <a href="/" aria-label="Home Button" data-testid="home-button">
                 <Image id={styles.icon} src="/icons/icon.webp" alt="Home button icon" width={50} height={50} />
               </a>
             </li>
             <li className={`${styles["nav-links"]} ${isOpen ? styles.open : ""}`}>
               <a className="button" id={styles.upload} data-testid="upload-button" href='#'>Upload</a>
-              <a className="special-button" data-testid="special-button-1" href='#'>Items</a>
+              <a className="special-button" data-testid="special-button-1" href='/items'>Items</a>
             </li>
           </ul>
           <div id={styles.hamburger} className={isOpen ? styles.open : ""} onClick={toggleMenu}>
@@ -60,6 +60,10 @@ export default function RootLayout({
           </div>
         </nav>
         {children}
+
+        <footer id={styles.footer}>
+          <p className={styles["footer-text"]}>&copy; Kevin Tolbert</p>
+        </footer>
         </body>
     </html>
   );

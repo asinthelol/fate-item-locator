@@ -10,32 +10,30 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Fate Item Locator",
+  title: "Home | Item Locator",
   description: "A tool to help you find items in Fate/Grand Order.",
 };
 
 export default function Home() {
 
   return (
-    <>
-      <main id={styles["hero"]}>
-        <div className={poppins.className} id={styles["hero-text-area"]}>
-          <div id={styles["hero-text"]}>
-            <h1>Want it, Search it, </h1>
-            <h1 id={styles.colored} data-testid="colored">Get it.</h1>
-          </div>
-          
-          <div>
-            <p className={styles.gray} data-testid="gray-1">Find what you need,</p>
-            <p className={styles.gray} data-testid="gray-2">just like that.</p>
-          </div>
-          <a className="special-button" data-testid="special-button-2" href="">Items</a>
+    <main id={styles["hero"]}>
+      <div className={poppins.className} id={styles["hero-text-area"]}>
+        <div id={styles["hero-text"]}>
+          <h1>Want it, Search it, </h1>
+          <h1 id={styles.colored} data-testid="colored">Get it.</h1>
         </div>
-        <div id={styles["hero-image"]}>
-          <div id={styles["image-area"]} />
+        
+        <div>
+          <p className={styles.gray} data-testid="gray-1">Find what you need,</p>
+          <p className={styles.gray} data-testid="gray-2">just like that.</p>
         </div>
-      </main>
-    </>
+        <a className="special-button" data-testid="special-button-2" href="">Items</a>
+      </div>
+      <div id={styles["hero-image"]}>
+        <div id={styles["image-area"]} />
+      </div>
+    </main>
     
   );
 }

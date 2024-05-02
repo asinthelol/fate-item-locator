@@ -88,6 +88,15 @@
   }
 }
 
+#footer {
+  @include flex;
+  width: 100%;
+
+  opacity: 0.5;
+
+  height: 3rem;
+}
+
 // Styles for mobile viewport
 @media screen and (max-width: $mobile-breakpoint) {
   #navbar-holder {
