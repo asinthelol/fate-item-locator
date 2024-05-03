@@ -1,0 +1,156 @@
+@import "../../scss/globals";
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    user-select: none;
+  }
+
+  to {
+    opacity: 1;
+    user-select: auto;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    user-select: auto;
+  }
+
+  to {
+    opacity: 0;
+    user-select: none;
+  }
+}
+
+
+
+#filter-area {
+  @include flex(flex-start, center, column);
+
+  width: 20rem;
+  height: fit-content;
+
+  border-radius: 1rem;
+
+  background-color: $foreground-color;
+
+  #top {
+    font-size: 1.25rem;
+
+    @include flex(space-between, center);
+
+    margin-top: 1rem;
+    
+    width: 90%;
+
+    svg {
+      cursor: pointer;
+    }
+  }
+
+  #bottom {
+    font-size: 1.25rem;
+
+    @include flex(flex-start, flex-start, column);
+
+    margin: 1rem 0;
+
+    width: 90%;
+
+    .filter-name-holder {
+
+      @include flex(flex-start, center);
+
+      width: 6.5rem;
+      height: max-content;
+
+      p {
+        font-size: 1.25rem;
+      }
+
+      svg {
+        cursor: pointer;
+
+        transform: rotate(-90deg);
+
+        transition: transform 0.3s ease;
+
+        &.active {
+          transform: rotate(0deg);
+        }
+      }
+    }
+
+    .dropdown {
+      @include flex(center, flex-start, column);
+      row-gap: 1rem;
+      
+      margin-left: 3.5rem;
+
+      width: 11rem;
+      height: 0rem;
+
+      list-style: none;
+
+      transition: height 0.3s ease;
+
+      &.active {
+        height: 16.5rem;
+      }
+
+      &.inactive {
+        height: 0rem;
+      }
+
+      li {
+        @include flex(space-between, center, row);
+        column-gap: 1rem;
+
+        opacity: 0;
+
+        user-select: none;
+
+        width: 11rem;
+
+        padding: 1rem 2rem;
+
+        border-radius: 2rem;
+
+        &.hidden {
+          opacity: 0;
+          user-select: none;
+        }
+
+        &.active {
+          animation: fadeIn 0.1s  0.13s ease forwards;
+
+        }
+
+        &.inactive {
+          animation: fadeOut 0.08s ease forwards;
+        }
+
+        &:hover {
+          background-color: $foreground-color-dark;
+        }
+
+        .circle {
+          stroke: url("#gradient");
+          fill: transparent;
+
+          .fill {
+            fill: url("#gradient");
+          }
+        }
+
+        #circleOne {
+          fill: url("#gradient");
+          
+        }
+      }
+    }
+  }
+}

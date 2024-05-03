@@ -1,0 +1,10 @@
+@import '../../scss/globals';
+
+#main {
+  @include flex(center, center, column);
+
+  #item-filter-area {
+    @include flex(center, flex-start, row);
+    column-gap: 4.5rem;
+  }
+}

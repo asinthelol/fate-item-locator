@@ -1,0 +1,49 @@
+@import "../../scss/globals";
+
+#item-area {
+  @include flex;
+  gap: 2rem 1.5em;
+  flex-wrap: wrap;
+
+  width: 50rem;
+  height: fit-content;
+
+  .item {
+    @include flex(center, center, column);
+    row-gap: 1rem;
+
+    border-radius: 0.5rem;
+
+    .image-holder {
+      @include flex(center, center);
+
+      padding: 1rem;
+
+      width: 8rem;
+      height: 8rem;
+
+      border-radius: 1rem;
+
+      background-color: $foreground-color;
+
+      transition: background-color 0.2s ease;
+
+      &:hover, &:focus {
+        background-color: $foreground-color-dark;
+      }
+    }
+
+    .text-holder {
+
+      
+      width: 8rem;
+      height: 4rem;
+
+      text-align: center;
+
+      p {
+        text-wrap: pretty;
+      }
+    }
+  }
+}

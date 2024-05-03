@@ -28,7 +28,7 @@ export default function Home() {
           <p className={styles.gray} data-testid="gray-1">Find what you need,</p>
           <p className={styles.gray} data-testid="gray-2">just like that.</p>
         </div>
-        <a className="special-button" data-testid="special-button-2" href="">Items</a>
+        <a className="special-button" data-testid="special-button-2" href="/items">Start Searching</a>
       </div>
       <div id={styles["hero-image"]}>
         <div id={styles["image-area"]} />

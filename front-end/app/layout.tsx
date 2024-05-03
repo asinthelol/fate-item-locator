@@ -36,8 +36,6 @@ export default function RootLayout({
       <head>
         <link rel="icon" sizes="64x64" href="/icons/favicon.ico" />
         <link rel="apple-touch-icon" href="/icons/favicon.ico" />
-        <link rel="preload" as="image" href="/hero/hero.webp" />
-        <link rel="preload" as="image" href="/hero/hero-mobile.webp" />
       </head>
       <body className={inter.className}>
         <nav id={styles["navbar-holder"]}>
@@ -50,7 +48,7 @@ export default function RootLayout({
             </li>
             <li className={`${styles["nav-links"]} ${isOpen ? styles.open : ""}`}>
               <a className="button" id={styles.upload} data-testid="upload-button" href='#'>Upload</a>
-              <a className="special-button" data-testid="special-button-1" href='/items'>Items</a>
+              <a className="button" data-testid="special-button-1" href='/items'>Items</a>
             </li>
           </ul>
           <div id={styles.hamburger} className={isOpen ? styles.open : ""} onClick={toggleMenu}>

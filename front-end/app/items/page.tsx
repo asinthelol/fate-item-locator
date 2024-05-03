@@ -1,5 +1,9 @@
 import React from "react";
 import { Metadata } from "next";
+import styles from "./scss/page.module.scss";
+import ItemArea from "./components/item-area";
+import FilterArea from "./components/filter-area";
+import Header from "./components/header";
 
 export const metadata: Metadata = {
   title: "Items | Item Locator",
@@ -9,8 +13,13 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div>
-      <h1>Items</h1>
-    </div>
+    <main id={styles.main}>
+      <Header />
+      <section id={styles["item-filter-area"]}>
+        <ItemArea />
+        <FilterArea />
+      </section>
+      
+    </main>
   );
 }
