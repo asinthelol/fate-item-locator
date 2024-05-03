@@ -26,24 +26,41 @@
 
       background-color: $foreground-color;
 
-      transition: background-color 0.2s ease;
+      transition: background-color $transition-duration ease;
 
-      &:hover, &:focus {
-        background-color: $foreground-color-dark;
-      }
+      &:hover, &:focus { background-color: $foreground-color-dark; }
     }
 
     .text-holder {
-
-      
       width: 8rem;
       height: 4rem;
 
       text-align: center;
 
-      p {
-        text-wrap: pretty;
-      }
+      p { text-wrap: pretty; }
     }
+  }
+}
+
+@media screen and (max-width: $landscape-breakpoint) {
+  #item-area {
+    width: 30.75rem;
+  }
+}
+
+// Tablet portrait viewport.
+@media screen and (max-width: $portrait-breakpoint) {
+  #item-area {
+    order: 2;
+    width: 30.75rem;
+  }
+}
+
+// Mobile viewport.
+@media screen and (max-width: $mobile-breakpoint) {
+  #item-area {
+    order: 2;
+
+    width: 19.5rem;
   }
 }

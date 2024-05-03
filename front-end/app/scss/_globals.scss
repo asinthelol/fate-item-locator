@@ -8,10 +8,15 @@ $light-text-color: rgba(242, 239, 234, 0.5);
 
 $special-color: linear-gradient(to right, rgba(89, 118, 186, 1), rgba(102, 84, 208, 0.5));
 $special-color-hover: linear-gradient(to right, rgba(111, 145, 224, 1), rgba(135, 115, 255, 0.25));
+$special-color-c1: rgba(89, 118, 186, 1); // First color of the linear gradient.
 
 $mobile-breakpoint: 27rem;
 $portrait-breakpoint: 64rem;
 $landscape-breakpoint: 80rem;
+
+$animation-duration: 0.3s;
+$transition-duration: 0.3s;
+$transition-duration-2: 0.5s;
 
 // Mixins
 @mixin flex($justify: center, $align: center, $direction: row) {

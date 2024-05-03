@@ -1,10 +1,34 @@
 @import '../../scss/globals';
 
 #main {
-  @include flex(center, center, column);
+  @include flex(flex-start, center, column);
+  flex: 1;
+  row-gap: 8rem;
+
+  height: 100%;
 
   #item-filter-area {
     @include flex(center, flex-start, row);
     column-gap: 4.5rem;
+  }
+}
+
+
+@media screen and (max-width: $portrait-breakpoint) {
+  #main {
+    #item-filter-area {
+      @include flex(flex-start, center, column);
+      row-gap: 3rem;
+    }
+  }
+}
+
+
+@media screen and (max-width: $mobile-breakpoint) {
+  #main {
+    #item-filter-area {
+      @include flex(flex-start, center, column);
+      row-gap: 5rem;
+    }
   }
 }

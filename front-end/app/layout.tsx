@@ -36,14 +36,15 @@ export default function RootLayout({
       <head>
         <link rel="icon" sizes="64x64" href="/icons/favicon.ico" />
         <link rel="apple-touch-icon" href="/icons/favicon.ico" />
+        <link rel="preload" as="image" href="/hero/hero-mobile.webp" />
       </head>
       <body className={inter.className}>
         <nav id={styles["navbar-holder"]}>
-          <div className={`${styles.overlay} ${isOpen ? styles.open : styles.closed}`}></div>
+          <div className={`${styles.overlay} ${isOpen ? styles.open : styles.closed}`}></div> {/* Overlay for the hamburger menu */}
           <ul className={poppins.className} id={styles.navbar}>
             <li className={styles["nav-links"]}>
               <a href="/" aria-label="Home Button" data-testid="home-button">
-                <Image id={styles.icon} src="/icons/icon.webp" alt="Home button icon" width={50} height={50} />
+                <Image id={styles.icon} src="/icons/icon.webp" alt="Home button icon" width={50} height={50} draggable={false}/>
               </a>
             </li>
             <li className={`${styles["nav-links"]} ${isOpen ? styles.open : ""}`}>

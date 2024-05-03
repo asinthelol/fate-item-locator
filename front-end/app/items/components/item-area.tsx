@@ -1,209 +1,27 @@
 import React from "react";
 import styles from "../scss/item-area.module.scss";
-import Image from "next/image";
+import Item from "./item";
+
+const itemData = [ // Test item data before implementing backend.
+  { name: "Arrowhead of Malice", imgSrc: "/items/arrowhead-malice.png", alt: "arrowhead-malice" },
+  { name: "Arrowhead of Malice", imgSrc: "/items/arrowhead-malice.png", alt: "arrowhead-malice" },
+  { name: "Arrowhead of Malice", imgSrc: "/items/arrowhead-malice.png", alt: "arrowhead-malice" },
+  { name: "Arrowhead of Malice", imgSrc: "/items/arrowhead-malice.png", alt: "arrowhead-malice" },
+  { name: "Arrowhead of Malice", imgSrc: "/items/arrowhead-malice.png", alt: "arrowhead-malice" },
+  { name: "Arrowhead of Malice", imgSrc: "/items/arrowhead-malice.png", alt: "arrowhead-malice" },
+];
 
 export default function ItemArea() {
   return (
     <div id={styles["item-area"]}>
-      <div className={styles.item}>
-        <div className={styles["image-holder"]}>
-          <Image className={styles["item-image"]} src="/items/arrowhead-malice.png" alt="arrowhead-malice" width={80} height={80} />
-        </div>
-        
-        <div className={styles["text-holder"]}>
-          <p>Arrowhead of Maliceasdasdasd asdasdasda</p>
-        </div>
-      </div>
-
-      <div className={styles.item}>
-        <div className={styles["image-holder"]}>
-          <Image className={styles["item-image"]} src="/items/arrowhead-malice.png" alt="arrowhead-malice" width={80} height={80} />
-        </div>
-        
-        <div className={styles["text-holder"]}>
-          <p>Arrowhead of Maliceasdasdasd asdasdasda</p>
-        </div>
-      </div>
-
-      <div className={styles.item}>
-        <div className={styles["image-holder"]}>
-          <Image className={styles["item-image"]} src="/items/arrowhead-malice.png" alt="arrowhead-malice" width={80} height={80} />
-        </div>
-        
-        <div className={styles["text-holder"]}>
-          <p>Arrowhead of Maliceasdasdasd asdasdasda</p>
-        </div>
-      </div>
-
-      <div className={styles.item}>
-        <div className={styles["image-holder"]}>
-          <Image className={styles["item-image"]} src="/items/arrowhead-malice.png" alt="arrowhead-malice" width={80} height={80} />
-        </div>
-        
-        <div className={styles["text-holder"]}>
-          <p>Arrowhead of Maliceasdasdasd asdasdasda</p>
-        </div>
-      </div>
-
-      <div className={styles.item}>
-        <div className={styles["image-holder"]}>
-          <Image className={styles["item-image"]} src="/items/arrowhead-malice.png" alt="arrowhead-malice" width={80} height={80} />
-        </div>
-        
-        <div className={styles["text-holder"]}>
-          <p>Arrowhead of Maliceasdasdasd asdasdasda</p>
-        </div>
-      </div>
-      
-      <div className={styles.item}>
-        <div className={styles["image-holder"]}>
-          <Image className={styles["item-image"]} src="/items/arrowhead-malice.png" alt="arrowhead-malice" width={80} height={80} />
-        </div>
-        
-        <div className={styles["text-holder"]}>
-          <p>Arrowhead of Maliceasdasdasd asdasdasda</p>
-        </div>
-      </div>
-
-      <div className={styles.item}>
-        <div className={styles["image-holder"]}>
-          <Image className={styles["item-image"]} src="/items/arrowhead-malice.png" alt="arrowhead-malice" width={80} height={80} />
-        </div>
-        
-        <div className={styles["text-holder"]}>
-          <p>Arrowhead of Maliceasdasdasd asdasdasda</p>
-        </div>
-      </div>
-
-      <div className={styles.item}>
-        <div className={styles["image-holder"]}>
-          <Image className={styles["item-image"]} src="/items/arrowhead-malice.png" alt="arrowhead-malice" width={80} height={80} />
-        </div>
-        
-        <div className={styles["text-holder"]}>
-          <p>Arrowhead of Maliceasdasdasd asdasdasda</p>
-        </div>
-      </div>
-
-      <div className={styles.item}>
-        <div className={styles["image-holder"]}>
-          <Image className={styles["item-image"]} src="/items/arrowhead-malice.png" alt="arrowhead-malice" width={80} height={80} />
-        </div>
-        
-        <div className={styles["text-holder"]}>
-          <p>Arrowhead of Maliceasdasdasd asdasdasda</p>
-        </div>
-      </div>
-
-      <div className={styles.item}>
-        <div className={styles["image-holder"]}>
-          <Image className={styles["item-image"]} src="/items/arrowhead-malice.png" alt="arrowhead-malice" width={80} height={80} />
-        </div>
-        
-        <div className={styles["text-holder"]}>
-          <p>Arrowhead of Maliceasdasdasd asdasdasda</p>
-        </div>
-      </div>
-
-      <div className={styles.item}>
-        <div className={styles["image-holder"]}>
-          <Image className={styles["item-image"]} src="/items/arrowhead-malice.png" alt="arrowhead-malice" width={80} height={80} />
-        </div>
-        
-        <div className={styles["text-holder"]}>
-          <p>Arrowhead of Maliceasdasdasd asdasdasda</p>
-        </div>
-      </div>
-
-      <div className={styles.item}>
-        <div className={styles["image-holder"]}>
-          <Image className={styles["item-image"]} src="/items/arrowhead-malice.png" alt="arrowhead-malice" width={80} height={80} />
-        </div>
-        
-        <div className={styles["text-holder"]}>
-          <p>Arrowhead of Maliceasdasdasd asdasdasda</p>
-        </div>
-      </div>
-
-      <div className={styles.item}>
-        <div className={styles["image-holder"]}>
-          <Image className={styles["item-image"]} src="/items/arrowhead-malice.png" alt="arrowhead-malice" width={80} height={80} />
-        </div>
-        
-        <div className={styles["text-holder"]}>
-          <p>Arrowhead of Maliceasdasdasd asdasdasda</p>
-        </div>
-      </div>
-
-      <div className={styles.item}>
-        <div className={styles["image-holder"]}>
-          <Image className={styles["item-image"]} src="/items/arrowhead-malice.png" alt="arrowhead-malice" width={80} height={80} />
-        </div>
-        
-        <div className={styles["text-holder"]}>
-          <p>Arrowhead of Maliceasdasdasd asdasdasda</p>
-        </div>
-      </div>
-
-      <div className={styles.item}>
-        <div className={styles["image-holder"]}>
-          <Image className={styles["item-image"]} src="/items/arrowhead-malice.png" alt="arrowhead-malice" width={80} height={80} />
-        </div>
-        
-        <div className={styles["text-holder"]}>
-          <p>Arrowhead of Maliceasdasdasd asdasdasda</p>
-        </div>
-      </div>
-
-      <div className={styles.item}>
-        <div className={styles["image-holder"]}>
-          <Image className={styles["item-image"]} src="/items/arrowhead-malice.png" alt="arrowhead-malice" width={80} height={80} />
-        </div>
-        
-        <div className={styles["text-holder"]}>
-          <p>Arrowhead of Maliceasdasdasd asdasdasda</p>
-        </div>
-      </div>
-
-      <div className={styles.item}>
-        <div className={styles["image-holder"]}>
-          <Image className={styles["item-image"]} src="/items/arrowhead-malice.png" alt="arrowhead-malice" width={80} height={80} />
-        </div>
-        
-        <div className={styles["text-holder"]}>
-          <p>Arrowhead of Maliceasdasdasd asdasdasda</p>
-        </div>
-      </div>
-
-      <div className={styles.item}>
-        <div className={styles["image-holder"]}>
-          <Image className={styles["item-image"]} src="/items/arrowhead-malice.png" alt="arrowhead-malice" width={80} height={80} />
-        </div>
-        
-        <div className={styles["text-holder"]}>
-          <p>Arrowhead of Maliceasdasdasd asdasdasda</p>
-        </div>
-      </div>
-
-      <div className={styles.item}>
-        <div className={styles["image-holder"]}>
-          <Image className={styles["item-image"]} src="/items/arrowhead-malice.png" alt="arrowhead-malice" width={80} height={80} />
-        </div>
-        
-        <div className={styles["text-holder"]}>
-          <p>Arrowhead of Maliceasdasdasd asdasdasda</p>
-        </div>
-      </div>
-
-      <div className={styles.item}>
-        <div className={styles["image-holder"]}>
-          <Image className={styles["item-image"]} src="/items/arrowhead-malice.png" alt="arrowhead-malice" width={80} height={80} />
-        </div>
-        
-        <div className={styles["text-holder"]}>
-          <p>Arrowhead of Maliceasdasdasd asdasdasda</p>
-        </div>
-      </div>
+      {itemData.map((item, index) => (
+        <Item
+          key={index}
+          name={item.name}
+          imgSrc={item.imgSrc}
+          alt={item.alt}
+        />
+      ))}
     </div>
   );
 }

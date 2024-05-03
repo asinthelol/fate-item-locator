@@ -1,18 +1,18 @@
 @import "./globals.scss";
 
-#hero {
+#main {
   @include flex;
-  column-gap: 10rem;
+  column-gap: 7.5rem;
 
   width: 100%;
-  height: 45rem;
+  height: 40rem;
 
   #hero-text-area {
     @include flex(center, flex-start, column);
     row-gap: 2rem;
 
-    width: 30%;
-    height: 50%;
+    width: 34.75rem;
+    height: 22.75rem;
 
     #hero-text {
       @include flex(center, flex-start, column);
@@ -43,60 +43,73 @@
       }
   }
 
-  #hero-image {
-    @include flex;
-
-    width: 36rem; // Make this the same width as the &:before below.
-    height: 36rem;
-
+  // I tried using an img tag but I ended up with the same result.
+  // So I opted for a ::before instead. The problem is that 
+  // if you check devtools, the image extends further than image-area.
+  // I don't know what to do about that, so I'm leaving it as is.
+  // This is also the reason why there are negative margins
+  // in the media queries.
+  #image-area {
+    position: relative;
+    width: 24rem;
+    height: 24rem;
+    overflow: hidden; 
     transform: rotate(45deg);
-    overflow: hidden;
-    
-
-    #image-area {
-      position: relative;
-      width: 25rem;
-      height: 25rem;
-      overflow: hidden; // Hide the overflow
-    
-      &::before {
-        content: "";
-        position: absolute;
+  
+    &::before {
+      content: "";
+      position: absolute;
 
 
-        width: 36rem;
-        height: 36rem;
-        background: url("/hero/hero.webp") no-repeat center/cover;
+      width: 36rem;
+      height: 36rem;
+      background: url("/hero/hero.webp") no-repeat center/cover;
 
-        @media screen and (max-width: 27rem) {
-          background: url("/hero/hero-mobile.webp") no-repeat center/cover;;
-        }
-
-        transform: rotate(-45deg) translate(0, -22%);
+      @media screen and (max-width: 27rem) {
+        background: url("/hero/hero-mobile.webp") no-repeat center/cover;;
       }
+
+      transform: rotate(-45deg) translate(0, -22%);
+    }
+  }
+}
+
+@media screen and (max-width: $landscape-breakpoint) {
+  #main {
+    column-gap: 2rem;
+
+    #hero-text-area {
+      margin-left: -3.5rem;
     }
   }
 }
 
 // Styles for tablet (portrait) viewport
 @media screen and (max-width: $portrait-breakpoint) {
-  #hero {
+  #main {
 
-    column-gap: 2rem;
-    
-    #hero-image {
-      
+    #hero-text-area {
+      margin-left: -2.5rem;
+
       width: 24rem;
-      height: 24rem;
+      height: 20rem;
 
-      #image-area {
-        width: 16rem;
-        height: 16rem;
-
-        &::before {
-          width: 24rem;
-          height: 24rem;
+      #hero-text {
+        h1 {
+          font-size: 2.5rem;
+          line-height: 3rem;
         }
+      }
+    }
+
+    #image-area {
+
+      width: 16rem;
+      height: 16rem;
+
+      &::before {
+        width: 24rem;
+        height: 24rem;
       }
     }
   }
@@ -105,20 +118,24 @@
 
 // Styles for mobile viewport
 @media screen  and (max-width: $mobile-breakpoint) {
-  #hero {
-    @include flex(center, center, column);
+
+  #main {
+    @include flex(space-between, center, column);
  
-    height: 40rem;
+    height: 34.25rem;
 
     #hero-text-area {
       @include flex(center, center, column);
       order: 2;
+
+      margin-left: 0;
 
       width: 75%;
       height: 50%;
 
       #hero-text {
         @include flex(center, center, column);
+        
         width: 100%;
         h1 {
           font-size: 2rem;
@@ -126,26 +143,21 @@
         }
       }
       
+      // The text under the h1
       .gray {
         font-size: 1.25rem;
         text-align: center;
       }
     }
 
-    #hero-image {
-      
+    #image-area {
       width: 12rem;
       height: 12rem;
 
-      #image-area {
-        width: 8rem;
-        height: 8rem;
-
-        &::before {
-          width: 12rem;
-          height: 12rem;
-          transform: rotate(-45deg) translate(0, -25%);
-        }
+      &::before {
+        width: 18rem;
+        height: 18rem;
+        transform: rotate(-45deg) translate(0, -25%);
       }
     }
   }

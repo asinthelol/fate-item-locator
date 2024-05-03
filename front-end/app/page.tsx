@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function Home() {
 
   return (
-    <main id={styles["hero"]}>
+    <main id={styles["main"]}>
       <div className={poppins.className} id={styles["hero-text-area"]}>
         <div id={styles["hero-text"]}>
           <h1>Want it, Search it, </h1>
@@ -30,9 +30,7 @@ export default function Home() {
         </div>
         <a className="special-button" data-testid="special-button-2" href="/items">Start Searching</a>
       </div>
-      <div id={styles["hero-image"]}>
         <div id={styles["image-area"]} />
-      </div>
     </main>
     
   );

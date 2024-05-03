@@ -7,8 +7,11 @@
   border: 0;
 }
 
+html { scrollbar-gutter: stable; }
+
 body {
   @include flex(space-between, space-between, column);
+  row-gap: 3rem;
 
   position: relative;
   background-color: $background-color;
@@ -16,6 +19,7 @@ body {
 
   min-height: 100vh;
   min-height: 100svh;
+      
 
   a {
     text-decoration: none;
@@ -57,4 +61,21 @@ body {
       filter: hue-rotate(12deg);
     }
   }
+}
+
+@media screen and (max-width: $portrait-breakpoint) {
+  body {
+    row-gap: 5rem;
+  }
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+
+  body {
+    // The main content area is slightly higher on mobile if I use svh, so
+    // It will stay as vh for now.
+    
+    min-height: 100vh;
+  }
+  
 }
