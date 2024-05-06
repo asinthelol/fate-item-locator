@@ -4,14 +4,16 @@ import styles from "../scss/filter-area.module.scss"
 
 export default function FilterArea() {
 
-  // State to track the open/close status of rarity and arc filters.
+  // State to track the open/close status of rarity and type filters.
+  // Yes, when you get the filter state, you will have to write filterState.type.
+  // I'm sorry about that.
   const [filterState, setFilterState] = useState({
     rarity: { open: false, classState: 'hidden' },
-    arc: { open: false, classState: 'hidden' },
+    type: { open: false, classState: 'hidden' },
   });
 
   // Toggle function to switch between open and close states.
-  const filterClick = (type: 'rarity' | 'arc') => {
+  const filterClick = (type: 'rarity' | 'type') => { // Type is different from the option category "type".
     setFilterState(prevState => ({
       ...prevState,
       [type]: {
@@ -23,22 +25,22 @@ export default function FilterArea() {
 
   // Filter options.
   const rOptions = ['Bronze', 'Silver', 'Gold'];
-  const aOptions = ['Arc 1', 'Arc 1.5', 'Arc 2', 'Arc 2.5'];
+  const tOptions = ['Material', 'Monument', 'Gem',];
 
   // State to track the checked status of the filter options.
   // I tried applying the same array format as the filter options but I got mad
   // so I'm just going to use two separate arrays.
-  const [rcheckedStatus, setRCheckedStatus] = useState(rOptions.map(() => true));
-  const [acheckedStatus, setACheckedStatus] = useState(aOptions.map(() => true));
+  const [rCheckedStatus, setRCheckedStatus] = useState(rOptions.map(() => true));
+  const [tCheckedStatus, setTCheckedStatus] = useState(tOptions.map(() => true));
 
   // Handle checkbox state change.
-  const handleCheck = (type: string, index: number) => {
+  const handleCheck = (type: string, index: number) => { // Type is different from the option category "type".
     if (type === "rarity") {
       setRCheckedStatus((prev) =>
         prev.map((status, i) => (i === index ? !status : status))
       );
     } else {
-      setACheckedStatus((prev) =>
+      setTCheckedStatus((prev) =>
         prev.map((status, i) => (i === index ? !status : status))
       );
     }
@@ -74,7 +76,7 @@ export default function FilterArea() {
             <p >Rarity</p>
           </div>
 
-          <ul className={`${styles.dropdown} ${filterState.rarity.open ? styles.active : styles.inactive}`} id={styles["dp-one"]}>
+          <ul className={`${styles.dropdown} ${filterState.rarity.open ? styles.active : styles.inactive}`}>
             {rOptions.map((option: string, index: number) => (
               <li 
                 key={index} 
@@ -82,7 +84,7 @@ export default function FilterArea() {
                 onClick={(event) => {
                   event.stopPropagation();
                   handleCheck('rarity', index);
-                  // logCheckedStatus(option, rcheckedStatus[index]); // expected output: {"name":"Bronze","checked":true}
+                  // logCheckedStatus(option, rCheckedStatus[index]); // expected output: {"name":"Bronze","checked":true}
                 }} 
               >
                 <label htmlFor={`rOption${index}`}>{option}</label>
@@ -90,7 +92,7 @@ export default function FilterArea() {
                   className={styles.circleCheckbox}
                   type="checkbox"
                   name={option}
-                  checked={rcheckedStatus[index]}
+                  checked={rCheckedStatus[index]}
                   onChange={(event) => {
                     event.stopPropagation();
                   }}
@@ -102,27 +104,27 @@ export default function FilterArea() {
         </div>
 
         <div className={styles["filter-holder"]}>
-          <div className={styles["filter-name-holder"]} onClick={() => filterClick("arc")}>
-            <svg className={styles[filterState.arc.classState]} xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"  fill="#F2EFEA"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-            <p>Arc</p>
+          <div className={styles["filter-name-holder"]} onClick={() => filterClick("type")}>
+            <svg className={styles[filterState.type.classState]} xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"  fill="#F2EFEA"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+            <p>Type</p>
           </div>
-          <ul className={`${styles.dropdown} ${filterState.arc.open ? styles.active : styles.inactive}`} id={styles["dp-two"]}>
-            {aOptions.map((option: string, index: number) => (
+          <ul className={`${styles.dropdown} ${filterState.type.open ? styles.active : styles.inactive}`}>
+            {tOptions.map((option: string, index: number) => (
               <li 
                 key={index} 
-                className={styles[filterState.arc.classState]} 
+                className={styles[filterState.type.classState]} 
                 onClick={(event) => {
                   event.stopPropagation();
-                  handleCheck('arc', index);
-                  // logCheckedStatus(option, acheckedStatus[index]); // expected output: {"name":"Arc 1","checked":true}
+                  handleCheck('type', index);
+                  // logCheckedStatus(option, tCheckedStatus[index]); // expected output: {"name":"type 1","checked":true}
                 }}
               >
-                <label htmlFor={`aOption${index}`}>{option}</label>
+                <label htmlFor={`tOption${index}`}>{option}</label>
                 <input
                   className={styles.circleCheckbox}
                   type="checkbox"
                   name={option}
-                  checked={acheckedStatus[index]}
+                  checked={tCheckedStatus[index]}
                   onChange={(event) => event.stopPropagation()}
                   onClick={(event) => event.stopPropagation()}
                 />

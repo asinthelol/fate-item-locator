@@ -102,8 +102,7 @@
       transition: height $transition-duration ease;
 
       // One list has 3 items, the other has 4.
-      &#dp-one.active { height: 12rem; }
-      &#dp-two.active { height: 16.5rem; }
+      &.active { height: 12rem; }
       &.inactive { height: 0rem; }
 
       // The items in the list.
