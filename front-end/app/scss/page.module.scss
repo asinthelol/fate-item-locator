@@ -1,6 +1,6 @@
 @import "./globals.scss";
 
-#main {
+#container {
   @include flex;
   column-gap: 7.5rem;
 
@@ -75,7 +75,7 @@
 }
 
 @media screen and (max-width: $landscape-breakpoint) {
-  #main {
+  #container {
     column-gap: 2rem;
 
     #hero-text-area {
@@ -86,7 +86,7 @@
 
 // Styles for tablet (portrait) viewport
 @media screen and (max-width: $portrait-breakpoint) {
-  #main {
+  #container {
 
     #hero-text-area {
       margin-left: -2.5rem;
@@ -119,7 +119,7 @@
 // Styles for mobile viewport
 @media screen  and (max-width: $mobile-breakpoint) {
 
-  #main {
+  #container {
     @include flex(space-between, center, column);
  
     height: 34.25rem;

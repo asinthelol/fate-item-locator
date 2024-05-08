@@ -1,0 +1,36 @@
+@import "../../../scss/globals.scss";
+
+#item-info-area {
+  @include flex(center, center, column);
+  row-gap: 3rem;
+
+  #text-area {
+    @include flex(center, center, column);
+    row-gap: 1rem;
+
+    #item-name {
+      font-size: 2.5rem;
+      font-weight: normal;
+    }
+    #sub-heading {
+      font-size: 1.5rem;
+      color: $light-text-color;
+    }
+  }
+
+  #image-area {
+    @include flex;
+
+    width: 9rem;
+    height: 9rem;
+    
+    border-radius: 1rem;
+
+    background-color: $foreground-color;
+
+    img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+}

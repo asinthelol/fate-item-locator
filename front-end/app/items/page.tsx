@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main id={styles.main}>
+    <main id={styles.container}>
       <Header />
       <section id={styles["item-filter-area"]}>
         <ItemArea />

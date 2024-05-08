@@ -1,0 +1,10 @@
+@import "../../../scss/globals.scss";
+
+#container {
+  @include flex(flex-start, center, column);
+  flex: 1;
+  row-gap: 8rem;
+}
+
+
+

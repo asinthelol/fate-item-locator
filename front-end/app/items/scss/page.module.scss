@@ -1,6 +1,6 @@
 @import '../../scss/globals';
 
-#main {
+#container {
   @include flex(flex-start, center, column);
   flex: 1;
   row-gap: 8rem;
@@ -15,7 +15,7 @@
 
 
 @media screen and (max-width: $portrait-breakpoint) {
-  #main {
+  #container {
     #item-filter-area {
       @include flex(flex-start, center, column);
       row-gap: 3rem;
@@ -25,7 +25,7 @@
 
 
 @media screen and (max-width: $mobile-breakpoint) {
-  #main {
+  #container {
     #item-filter-area {
       @include flex(flex-start, center, column);
       row-gap: 5rem;

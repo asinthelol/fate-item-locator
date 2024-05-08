@@ -1,0 +1,40 @@
+@import "../../../scss/globals.scss";
+
+#table {
+  position: relative;
+
+  width: 47rem;
+
+  border-collapse: collapse;
+
+  background-color: $foreground-color;
+
+  .table-values-holder {
+
+    &::after {
+      content: "";
+      
+      position: absolute;
+
+      left: 2%;
+      right: 2%;
+      top: 3.25rem;
+
+      border-top: thin solid gray;
+    }
+  }
+
+  .table-key,
+  .table-value {
+    padding: 1rem;
+    text-align: center;
+
+    &:last-of-type { border-right: none; }
+
+    &:first-of-type, &:nth-of-type(2) {
+      max-width: 11.5rem;
+    }
+  }
+}
+
+
