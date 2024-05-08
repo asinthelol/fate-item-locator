@@ -31,6 +31,7 @@ type Quests = {
   ap_drop: number;
   bp_ap: number;
   chance: number;
+  link: string;
 };
 
 const quests: Quests[] = [
@@ -42,7 +43,8 @@ const quests: Quests[] = [
       "ap": 20,
       "ap_drop": 5,
       "bp_ap": 3,
-      "chance": 0.1
+      "chance": 0.1,
+      "link": "https://fategrandorder.fandom.com/wiki/Free_Quests:_G%C3%B6tterd%C3%A4mmerung#Flaming_Mansion"
   },
   {
     "id": 2,
@@ -52,8 +54,31 @@ const quests: Quests[] = [
     "ap": 20,
     "ap_drop": 5,
     "bp_ap": 3,
-    "chance": 0.1
-  }, 
+    "chance": 0.1,
+    "link": "https://fategrandorder.fandom.com/wiki/Free_Quests:_G%C3%B6tterd%C3%A4mmerung#Flaming_Mansion"
+  },
+  {
+    "id": 2,
+    "item_id": 1,
+    "area": "Gotterdammerung",
+    "name": "Ancient Ruins",
+    "ap": 20,
+    "ap_drop": 5,
+    "bp_ap": 3,
+    "chance": 0.1,
+    "link": "https://fategrandorder.fandom.com/wiki/Free_Quests:_G%C3%B6tterd%C3%A4mmerung#Flaming_Mansion"
+  },
+  {
+    "id": 2,
+    "item_id": 1,
+    "area": "Gotterdammerung",
+    "name": "Ancient Ruins",
+    "ap": 20,
+    "ap_drop": 5,
+    "bp_ap": 3,
+    "chance": 0.1,
+    "link": "https://fategrandorder.fandom.com/wiki/Free_Quests:_G%C3%B6tterd%C3%A4mmerung#Flaming_Mansion"
+  },
 ]
 
 export default function Page( {params} : {params: Parameter}) {

@@ -132,7 +132,7 @@
         &.active { animation: fadeIn 0.1s  0.12s ease forwards; }
         &.inactive { animation: fadeOut 0.1s ease forwards; }
 
-        &:hover { background-color: $foreground-color-dark; }
+        &:hover { background-color: $foreground-color-light; }
 
         label { user-select: none; }
 

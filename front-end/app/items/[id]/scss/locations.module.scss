@@ -1,40 +1,91 @@
 @import "../../../scss/globals.scss";
 
+@keyframes increaseWidth {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
 #table {
   position: relative;
 
   width: 47rem;
 
   border-collapse: collapse;
+  border-radius: 1rem;
+
+  overflow: hidden;
 
   background-color: $foreground-color;
 
+  thead {
+    background-color: $foreground-color-dark;
+  }
+
   .table-values-holder {
 
-    &::after {
-      content: "";
+    transition: background-color $transition-duration ease;
+
+    &:nth-of-type(even) {
+      background-color: $foreground-color-dark;
+
+      &:hover {
+        background-color: $foreground-color-dark-hover;
+      }
+    }
+
+    &:hover {
+      background-color: $foreground-color-light;
+
+      a {
+        .table-value {
+          &::before { width: 100%; }
+        }
+      }
       
-      position: absolute;
+    }
 
-      left: 2%;
-      right: 2%;
-      top: 3.25rem;
+    a {
+      text-decoration: none;
+  
+      @include flex;
+  
+      width: 11.5rem;
+      height: 100%;
 
-      border-top: thin solid gray;
+      .table-value {
+        &::before {
+          pointer-events: none;
+  
+          content: "";
+            
+          position: absolute;
+          
+          left: 50%;
+          right: 50%;
+          transform: translateX(-50%);
+          bottom: 0;
+  
+          width: 0;
+          height: 100%;
+  
+          border-bottom: thin solid $text-color;
+  
+          transition: width $transition-duration ease;
+        }
+      }
     }
   }
 
   .table-key,
   .table-value {
-    padding: 1rem;
     text-align: center;
 
-    &:last-of-type { border-right: none; }
+    position: relative;
 
-    &:first-of-type, &:nth-of-type(2) {
-      max-width: 11.5rem;
-    }
+    padding: 1rem;
+
+    &:last-of-type { border-right: none; }
+    &:first-of-type { width: 11.5rem; }
   }
 }
-
 

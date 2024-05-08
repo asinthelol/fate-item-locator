@@ -28,7 +28,7 @@
 
       transition: background-color $transition-duration ease;
 
-      &:hover, &:focus { background-color: $foreground-color-dark; }
+      &:hover, &:focus { background-color: $foreground-color-light; }
     }
 
     .text-holder {
