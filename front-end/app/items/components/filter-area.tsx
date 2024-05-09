@@ -90,6 +90,7 @@ export default function FilterArea() {
                 <label htmlFor={`rOption${index}`}>{option}</label>
                 <input
                   className={styles.circleCheckbox}
+                  id={`rOption${index}`}
                   type="checkbox"
                   name={option}
                   checked={rCheckedStatus[index]}
@@ -97,6 +98,7 @@ export default function FilterArea() {
                     event.stopPropagation();
                   }}
                   onClick={(event) => {event.stopPropagation()}}
+                  aria-label={`Check to filter by ${option}`}
                 />
               </li>
             ))}
@@ -122,11 +124,13 @@ export default function FilterArea() {
                 <label htmlFor={`tOption${index}`}>{option}</label>
                 <input
                   className={styles.circleCheckbox}
+                  id={`tOption${index}`}
                   type="checkbox"
                   name={option}
                   checked={tCheckedStatus[index]}
                   onChange={(event) => event.stopPropagation()}
                   onClick={(event) => event.stopPropagation()}
+                  aria-label={`Check to filter by ${option}`}
                 />
               </li>
             ))}

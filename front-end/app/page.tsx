@@ -22,14 +22,14 @@ export default function Page() {
       <div className={poppins.className} id={styles["hero-text-area"]}>
         <div id={styles["hero-text"]}>
           <h1>Want it, Search it,</h1>
-          <h1 id={styles.colored} aria-label="colored-heading">Get it.</h1>
+          <h1 id={styles.colored} aria-label="Colored heading">Get it.</h1>
         </div>
         
         <div>
-          <p className={styles.gray} aria-label="sub-heading-1">Find what you need,</p>
-          <p className={styles.gray} aria-label="sub-heading-2">just like that.</p>
+          <h2 className={styles.gray} aria-label="Subheading 1">Find what you need,</h2>
+          <h2 className={styles.gray} aria-label="Subheading 2">just like that.</h2>
         </div>
-        <Link className="special-button" aria-label="items-button-link-home" href="/items">Start Searching</Link>
+        <Link className="special-button" aria-label="Items button home" href="/items">Start Searching</Link>
       </div>
         <div id={styles["image-area"]} />
     </main>

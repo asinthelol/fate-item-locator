@@ -50,7 +50,7 @@ export default function RootLayout({
           <ul className={poppins.className} id={styles.navbar}>
 
             <li className={styles["nav-links"]} onClick={closeMenuIfOpen}>
-              <Link href="/" aria-label="home-button-link" onClick={toggleMenu}>
+              <Link href="/" aria-label="Home button" onClick={toggleMenu}>
                 <Image
                   id={styles.icon}
                   src="/icons/icon.webp"
@@ -62,13 +62,13 @@ export default function RootLayout({
             </li>
 
             <li className={`${styles["nav-links"]} ${isOpen ? styles.open : ""}`}>
-              <Link className="button" aria-label="upload-button-link" href="#">Upload</Link>
-              <Link className="button" aria-label="items-button-link-nav" href="/items" onClick={toggleMenu}>Items</Link>
+              <Link className="button" aria-label="Upload button" href="#">Upload</Link>
+              <Link className="button" aria-label="Items button nav" href="/items" onClick={toggleMenu}>Items</Link>
             </li>
 
           </ul>
 
-          <div id={styles.hamburger} className={isOpen ? styles.open : ""} onClick={toggleMenu}>
+          <div id={styles.hamburger} className={isOpen ? styles.open : ""} onClick={toggleMenu} aria-label="Hamburger button">
             <span className={styles["hamburger-line"]}></span>
             <span className={styles["hamburger-line"]}></span>
             <span className={styles["hamburger-line"]}></span>

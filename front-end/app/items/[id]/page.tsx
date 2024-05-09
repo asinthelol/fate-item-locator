@@ -1,17 +1,11 @@
 import React from "react";
+import { Metadata } from "next";
 import styles from "./scss/page.module.scss";
 import ItemInfo from "./components/item-info"
 import Locations from "./components/locations";
 
-
 type Parameter = {
  id: number;
-}
-
-type Items = {
-  id: number;
-  name: string;
-  image: string;
 }
 
 const items = [
@@ -39,7 +33,7 @@ const quests: Quests[] = [
       "id": 1,
       "item_id": 1,
       "area": "Gotterdammerung",
-      "name": "Ancient Ruins",
+      "name": "Berserker Training Ground - Expert",
       "ap": 20,
       "ap_drop": 5,
       "bp_ap": 3,
@@ -81,7 +75,13 @@ const quests: Quests[] = [
   },
 ]
 
+export const metadata: Metadata = {
+  title: `${items[0].name} | Item Locator`, // Temporary.
+  description: `All locations for ${items[0].name}.`,
+};
+
 export default function Page( {params} : {params: Parameter}) {
+
   return (
     <main id={styles.container}>
       <ItemInfo items={items} params={params} />

@@ -11,7 +11,7 @@ type Items = {
 
 type Quests = {
   id: number;
-  item_id: number;
+  item_id: number; // This will give a warning in the console (two children with same key) because the id is repeated in the second object
   area: string;
   name: string;
   ap: number;
@@ -52,7 +52,9 @@ export default function Locations({ params, items, quests }: LocationProps) {
       {matchingQuests.map((quest) => (
         <tr key={quest.id} className={styles["table-values-holder"]}>
           <td className={styles["table-value"]}>{quest.area}</td>
-          <a href={quest.link} target="_blank"><td className={styles["table-value"]}>{quest.name}</td></a>
+          <td className={styles["table-value"]}>
+            <a href={quest?.link} target="_blank" rel="noopener noreferrer">{quest?.name}</a>
+          </td>
           <td className={styles["table-value"]}>{quest.ap}</td>
           <td className={styles["table-value"]}>{quest.ap_drop}</td>
           <td className={styles["table-value"]}>{quest.bp_ap}</td>
