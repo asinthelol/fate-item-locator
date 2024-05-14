@@ -1,5 +1,6 @@
 "use client";
 import { Inter, Poppins } from "next/font/google";
+import { notFound } from "next/navigation";
 import "./globals.scss";
 import styles from "./scss/layout.module.scss";
 import Image from "next/image";
@@ -32,6 +33,9 @@ export default function RootLayout({
   function closeMenuIfOpen() {
     if (!isOpen) toggleMenu();
   }
+
+  // if there are no children, return notFound.
+  if (!children) return notFound();
 
   return (
     <html lang="en">

@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "../scss/item-area.module.scss";
 import Item from "./item";
 

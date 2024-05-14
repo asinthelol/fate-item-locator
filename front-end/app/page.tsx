@@ -1,6 +1,5 @@
 // import styles from "./page.module.css";
 import type { Metadata } from "next";
-import React from "react";
 import styles from "./scss/page.module.scss";
 import Link from "next/link";
 import { Poppins } from "next/font/google";

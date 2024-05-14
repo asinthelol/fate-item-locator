@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "../scss/filter-area.module.scss"
 
 export default function FilterArea() {

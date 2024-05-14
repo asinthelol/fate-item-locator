@@ -1,7 +1,8 @@
-import React from "react";
-import { Metadata } from "next";
+import { Metadata } from "next"
 import styles from "./scss/page.module.scss";
-import ItemInfo from "./components/item-info"
+
+import Header from "./components/header"
+import ItemImage from "./components/item-image"
 import Locations from "./components/locations";
 
 type Parameter = {
@@ -75,17 +76,45 @@ const quests: Quests[] = [
   },
 ]
 
-export const metadata: Metadata = {
-  title: `${items[0].name} | Item Locator`, // Temporary.
-  description: `All locations for ${items[0].name}.`,
-};
+export async function generateMetadata({ params }: { params: Parameter }): Promise<Metadata> {
+  // const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${params.id}`);
+  // const items = await response.json();
+  // const quests = await response.json();
+
+  const item = items.find(item => item.id === Number(params.id));
+
+  if(!item) {
+    return {
+      title: "Not Found",
+      description: "Item not found",
+    };
+  }
+  else {
+    return {
+      title: item.name,
+      description: "Item information",
+    };
+  
+  }
+}
 
 export default function Page( {params} : {params: Parameter}) {
+  // useEffect(() => {
+  //   fetch(`https://jsonplaceholder.typicode.com/todos/${params.id}`)
+  //     .then(response => response.json())
+  //     .then(data => setItem(data));
+  // }, [params.id]);
+  // I can either make it two calls to different endpoints, or have a table with the items and quests in the same endpoint.
+  const item = items.find(item => item.id === Number(params.id));
 
   return (
-    <main id={styles.container}>
-      <ItemInfo items={items} params={params} />
-      <Locations quests={quests} items={items} params={params} />
-    </main>
+    <>
+      <main id={styles.container}>
+        <Header items={items} params={params} />
+        <ItemImage items={items} params={params} />
+        <Locations quests={quests} items={items} params={params} />
+      </main>
+    </>
+    
   );
 }

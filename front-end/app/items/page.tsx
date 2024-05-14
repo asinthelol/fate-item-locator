@@ -1,4 +1,3 @@
-import React from "react";
 import { Metadata } from "next";
 import styles from "./scss/page.module.scss";
 import ItemArea from "./components/item-area";

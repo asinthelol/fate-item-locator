@@ -1,0 +1,14 @@
+@import "../../../scss/globals.scss";
+
+#image-area {
+  @include flex;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 1rem;
+  background-color: $foreground-color;
+
+  img {
+    width: 80px;
+    height: 80px;
+  }
+}

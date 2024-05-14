@@ -1,0 +1,16 @@
+@import "../../../scss/globals.scss";
+
+#header {
+  @include flex(center, center, column);
+  row-gap: 1rem;
+
+  #item-name {
+    font-size: 2.5rem;
+    font-weight: normal;
+  }
+  #sub-heading {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: $light-text-color;
+  }
+}
