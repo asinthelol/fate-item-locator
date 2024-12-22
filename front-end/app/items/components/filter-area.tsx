@@ -60,14 +60,6 @@ export default function FilterArea() {
       </div>
 
       <div id={styles.bottom}> {/* Where the filters are. */}
-
-
-        {/*
-          Important to note that you can click on every part of the filter option but the 
-          check button. I know it is a problem, but I kept running into a problem where
-          I could check the button if I clicked on it, but not if I clicked anywhere
-          else in the list item.
-        */}
         <div className={styles["filter-holder"]}>
           <div className={styles["filter-name-holder"]} onClick={() => filterClick("rarity")}>
             <svg className={styles[filterState.rarity.classState]} xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"  fill="#F2EFEA">
@@ -97,7 +89,10 @@ export default function FilterArea() {
                   onChange={(event) => {
                     event.stopPropagation();
                   }}
-                  onClick={(event) => {event.stopPropagation()}}
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    (event.target as HTMLElement).closest('li')?.click();
+                  }}
                   aria-label={`Check to filter by ${option}`}
                 />
               </li>
@@ -129,7 +124,10 @@ export default function FilterArea() {
                   name={option}
                   checked={tCheckedStatus[index]}
                   onChange={(event) => event.stopPropagation()}
-                  onClick={(event) => event.stopPropagation()}
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    (event.target as HTMLElement).closest('li')?.click();
+                  }}
                   aria-label={`Check to filter by ${option}`}
                 />
               </li>

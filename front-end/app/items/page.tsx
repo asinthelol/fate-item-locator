@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import styles from "./scss/page.module.scss";
 import ItemArea from "./components/item-area";
 import FilterArea from "./components/filter-area";
-import Header from "./components/header";
+import Header from "@/app/components/header";
 
 export const metadata: Metadata = {
   title: "Items | Item Locator",
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main id={styles.container}>
-      <Header />
+      <Header title={"Items"} subtitle={"Get to searching."}/>
       <section id={styles["item-filter-area"]}>
         <ItemArea />
         <FilterArea />

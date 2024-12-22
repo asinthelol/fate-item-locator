@@ -1,7 +1,7 @@
 import { Metadata } from "next"
 import styles from "./scss/page.module.scss";
 
-import Header from "./components/header"
+import Header from "@/app/components/header";
 import ItemImage from "./components/item-image"
 import Locations from "./components/locations";
 
@@ -110,7 +110,7 @@ export default function Page( {params} : {params: Parameter}) {
   return (
     <>
       <main id={styles.container}>
-        <Header items={items} params={params} />
+        <Header title={item ? item.name : "Item not found."} subtitle={item ? "Where to find it." : ""} />
         <ItemImage items={items} params={params} />
         <Locations quests={quests} items={items} params={params} />
       </main>

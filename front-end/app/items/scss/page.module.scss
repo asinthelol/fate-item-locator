@@ -1,4 +1,4 @@
-@import '../../scss/globals';
+@import '@/app/scss/globals';
 
 #container {
   @include flex(flex-start, center, column);

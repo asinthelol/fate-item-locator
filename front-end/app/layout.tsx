@@ -21,17 +21,17 @@ export default function RootLayout({
 
   // To check if hamburger menu is open.
   // Weirdly enough, the menu is technically open when it is set to false.
-  // So if you click on the home button while isOpen is set to false, 
+  // So if you click on the home button while isNotOpen is set to false, 
   // it will change its value to true,  meaning closed.
   // So true means closed, false means open.
-  const [isOpen, setIsOpen] = useState(false); 
+  const [isNotOpen, setisNotOpen] = useState(false); 
 
-  // Yoggle hamburger menu.
-  function toggleMenu() { setIsOpen((prev) => !prev); }
+  // Toggle hamburger menu.
+  function toggleMenu() { setisNotOpen((prev) => !prev); }
 
   // Only for the home button on mobile.
   function closeMenuIfOpen() {
-    if (!isOpen) toggleMenu();
+    if (!isNotOpen) toggleMenu();
   }
 
   // if there are no children, return notFound.
@@ -48,7 +48,7 @@ export default function RootLayout({
 
           <div
             className={`${styles.overlay}
-              ${isOpen ? styles.open : styles.closed}`}
+              ${isNotOpen ? styles.open : styles.closed}`}
           /> {/* Overlay for the hamburger menu */}
 
           <ul className={poppins.className} id={styles.navbar}>
@@ -65,14 +65,14 @@ export default function RootLayout({
               </Link>
             </li>
 
-            <li className={`${styles["nav-links"]} ${isOpen ? styles.open : ""}`}>
-              <Link className="button" aria-label="Upload button" href="#">Upload</Link>
+            <li className={`${styles["nav-links"]} ${isNotOpen ? styles.open : ""}`}>
+              <Link className="button" aria-label="Login button" href="/login" onClick={toggleMenu}>Login</Link>
               <Link className="button" aria-label="Items button nav" href="/items" onClick={toggleMenu}>Items</Link>
             </li>
 
           </ul>
 
-          <div id={styles.hamburger} className={isOpen ? styles.open : ""} onClick={toggleMenu} aria-label="Hamburger button">
+          <div id={styles.hamburger} className={isNotOpen ? styles.open : ""} onClick={toggleMenu} aria-label="Hamburger button">
             <span className={styles["hamburger-line"]}></span>
             <span className={styles["hamburger-line"]}></span>
             <span className={styles["hamburger-line"]}></span>

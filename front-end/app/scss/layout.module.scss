@@ -110,6 +110,7 @@
 
       .nav-links:last-of-type {
         user-select: none;
+        pointer-events: none;
 
         @include flex(center, center, column);
         row-gap: 3rem;
@@ -130,6 +131,7 @@
         &.open {
           @include flex(center, center, column);
           user-select: none;
+          pointer-events: auto;
 
           opacity: 1;
 

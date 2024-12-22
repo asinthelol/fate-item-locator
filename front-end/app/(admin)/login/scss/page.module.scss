@@ -1,0 +1,5 @@
+@import '@/app/scss/globals';
+
+#container {
+  @include flex(space-between, center, column);
+}

@@ -1,0 +1,9 @@
+@import '@/app/scss/globals';
+
+#holder {
+  @include flex(center, center, column);
+  width: 28.5rem;
+  height: 36.5rem;
+  border-radius: 1rem;
+  background-color: $foreground-color;
+}

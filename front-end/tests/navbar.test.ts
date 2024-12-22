@@ -7,7 +7,7 @@ test.describe('Navbar Tests', () => {
 
   test('Test button existence', async ({ page }) => {
     const homeButton = page.locator('[aria-label="Home button"]');
-    const uploadButton = page.locator('[aria-label="Upload button"]');
+    const uploadButton = page.locator('[aria-label="Login button"]');
     const itemsButton = page.locator('[aria-label="Items button nav"]');
 
     await expect(homeButton).toBeTruthy();

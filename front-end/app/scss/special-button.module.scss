@@ -1,0 +1,28 @@
+@import "./globals";
+
+// I repeated styles because hovering over the button causes the filter to
+// be applied instantly instead of gradually.
+.special-button { 
+  position: relative;
+
+  font-size: 1.25rem;
+  color: $text-color;
+  cursor: pointer;
+
+  padding: 0.75rem 3rem;
+
+  border-radius: 2rem;
+
+  background: $special-color;
+
+  transition: filter 0.2s;
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  &:hover {
+    filter: hue-rotate(12deg);
+  }
+}
