@@ -17,7 +17,6 @@ type Quests = {
   ap_drop: number;
   bp_ap: number;
   chance: number;
-  link: string;
 }
 
 type LocationProps = {
@@ -47,9 +46,7 @@ export default function Locations({ params, items, quests }: LocationProps) {
         {matchingQuests.map((quest) => (
           <tr key={quest.id} className={styles["table-values-holder"]}>
             <td className={styles["table-value"]}>{quest.area}</td>
-            <td className={styles["table-value"]}>
-              <a href={quest?.link} target="_blank" rel="noopener noreferrer">{quest?.name}</a>
-            </td>
+            <td className={styles["table-value"]}>{quest?.name}</td>
             <td className={styles["table-value"]}>{quest.ap}</td>
             <td className={styles["table-value"]}>{quest.ap_drop}</td>
             <td className={styles["table-value"]}>{quest.bp_ap}</td>

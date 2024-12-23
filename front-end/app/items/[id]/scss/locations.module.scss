@@ -37,7 +37,7 @@
 
       // Specific width so that it can line up with the anchor tag width.
       // It mostly lines up. Like it's only off by less than a pixel.
-      .table-value:nth-of-type(2)::before { width: 86%; } 
+      .table-value:nth-of-type(2)::before { width: 100%; } 
       
     }
 

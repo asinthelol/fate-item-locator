@@ -10,8 +10,8 @@
 html { scrollbar-gutter: stable; }
 
 body {
-  @include flex(space-between, space-between, column);
-  row-gap: 3rem;
+  @include flex(space-between, stretch, column);
+  row-gap: 8.5rem;
 
   position: relative;
   background-color: $background-color;

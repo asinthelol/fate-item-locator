@@ -1,5 +1,5 @@
 # Fate Item Locator
-### A website built with React, Django, Next.js, Typescript, and Sass.
+## A website built with React, .NET, Next.js, Typescript, and Sass.
 
 ## How To Use
 **To run, follow these steps**
